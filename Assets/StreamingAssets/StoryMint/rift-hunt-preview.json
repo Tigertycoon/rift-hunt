@@ -1,0 +1,164 @@
+{
+  "trailId": "portfolio-preview",
+  "title": "Rift Hunt Preview",
+  "sceneName": "RiftHuntPreview",
+  "startStepId": "intro",
+  "steps": [
+    {
+      "id": "intro",
+      "type": "message",
+      "title": "Rift Hunt – Editor Preview",
+      "body": "Gameplay-Pruefpfad ohne Kamera oder GPS. Tracking wird im Inspector am ManualARProvider ausgeloest.",
+      "primaryActionLabel": "Start",
+      "nextStepId": "scan"
+    },
+    {
+      "id": "scan",
+      "type": "scan",
+      "title": "Manuelles Testsignal",
+      "body": "Im Inspector am ManualARProvider: Signal Found. Dies simuliert ein Tracking-Ereignis.",
+      "targetId": "preview-target",
+      "nextStepId": "rune_sort",
+      "autoAdvanceDelay": 0.1
+    },
+    {
+      "id": "rune_sort",
+      "type": "rune_sort",
+      "title": "Rune Sort",
+      "body": "Originales Rift-Hunt-Minispiel.",
+      "runeOptions": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "runeSequence": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "simonRounds": 2,
+      "simonPadCount": 4,
+      "nextStepId": "simon_says"
+    },
+    {
+      "id": "simon_says",
+      "type": "simon_says",
+      "title": "Simon Says",
+      "body": "Originales Rift-Hunt-Minispiel.",
+      "runeOptions": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "runeSequence": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "simonRounds": 2,
+      "simonPadCount": 4,
+      "nextStepId": "gyro_maze"
+    },
+    {
+      "id": "gyro_maze",
+      "type": "gyro_maze",
+      "title": "Gyro Maze",
+      "body": "Originales Rift-Hunt-Minispiel.",
+      "runeOptions": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "runeSequence": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "simonRounds": 2,
+      "simonPadCount": 4,
+      "nextStepId": "rune_catcher"
+    },
+    {
+      "id": "rune_catcher",
+      "type": "rune_catcher",
+      "title": "Rune Catcher",
+      "body": "Originales Rift-Hunt-Minispiel.",
+      "runeOptions": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "runeSequence": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "simonRounds": 2,
+      "simonPadCount": 4,
+      "nextStepId": "seal_trace"
+    },
+    {
+      "id": "seal_trace",
+      "type": "seal_trace",
+      "title": "Seal Trace",
+      "body": "Originales Rift-Hunt-Minispiel.",
+      "runeOptions": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "runeSequence": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "simonRounds": 2,
+      "simonPadCount": 4,
+      "nextStepId": "whack_a_rune"
+    },
+    {
+      "id": "whack_a_rune",
+      "type": "whack_a_rune",
+      "title": "Whack A Rune",
+      "body": "Originales Rift-Hunt-Minispiel.",
+      "runeOptions": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "runeSequence": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "simonRounds": 2,
+      "simonPadCount": 4,
+      "nextStepId": "rune_memory"
+    },
+    {
+      "id": "rune_memory",
+      "type": "rune_memory",
+      "title": "Rune Memory",
+      "body": "Originales Rift-Hunt-Minispiel.",
+      "runeOptions": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "runeSequence": [
+        "Sonne",
+        "Mond",
+        "Stern"
+      ],
+      "simonRounds": 2,
+      "simonPadCount": 4,
+      "nextStepId": "finish"
+    },
+    {
+      "id": "finish",
+      "type": "message",
+      "title": "Pruefpfad abgeschlossen",
+      "body": "Dieser Editor-Pfad ersetzt keinen mobilen AR-Test."
+    }
+  ]
+}

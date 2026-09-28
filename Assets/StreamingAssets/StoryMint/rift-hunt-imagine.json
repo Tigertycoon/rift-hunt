@@ -1,0 +1,225 @@
+{
+  "trailId": "storymint-rift-hunt-imagine",
+  "title": "RiftHunt",
+  "sceneName": "Imagine-Scene",
+  "startStepId": "intro",
+  "steps": [
+    {
+      "id": "intro",
+      "type": "message",
+      "title": "RiftHunt",
+      "body": "Vier Signale sind im Menzerpark aufgetaucht. Loest die Hinweise, scannt die Orte und schliesst jedes Spiel ab.",
+      "primaryActionLabel": "Starten",
+      "nextStepId": "riddle-berliner-mauer"
+    },
+    {
+      "id": "riddle-berliner-mauer",
+      "type": "message",
+      "title": "Raetsel 1",
+      "body": "Ein buntes Stueck einer geteilten Stadt steht heute hier im Park. Suche die Farben, die wie eine Karte aussehen.",
+      "primaryActionLabel": "Ort suchen",
+      "nextStepId": "geo-berliner-mauer"
+    },
+    {
+      "id": "geo-berliner-mauer",
+      "type": "geofence",
+      "title": "Zum ersten Signal",
+      "body": "Geh zum gefundenen Ort und warte, bis das GPS-Signal dich freigibt.",
+      "locationName": "Vor der Villa",
+      "location": {
+        "latitude": 49.3929526,
+        "longitude": 8.801874
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Zum Scan",
+      "successMessage": "Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "scan-berliner-mauer"
+    },
+    {
+      "id": "scan-berliner-mauer",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "berliner-mauer",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-berliner-mauer"
+    },
+    {
+      "id": "game-berliner-mauer",
+      "type": "external_game",
+      "title": "GateRunner",
+      "body": "Schliesse alle 5 GateRunner-Level ab. Danach geht die Suche weiter.",
+      "gameId": "gaterunner-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte GateRunner und schliesse Level 5 ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "GateRunner geschafft.",
+      "primaryActionLabel": "GateRunner starten",
+      "qrFallbackCode": "TEAM1",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-steinmauer-mit-treppe"
+    },
+    {
+      "id": "riddle-steinmauer-mit-treppe",
+      "type": "message",
+      "title": "Raetsel 2",
+      "body": "Mitten im Park fuehren alte Stufen ins Gruen. Zwei moosbedeckte Sandsteinpfeiler bewachen sie. Suche die Ruine, durch die eine Treppe steigt.",
+      "primaryActionLabel": "Ort suchen",
+      "nextStepId": "geo-steinmauer-mit-treppe"
+    },
+    {
+      "id": "geo-steinmauer-mit-treppe",
+      "type": "geofence",
+      "title": "Zum zweiten Signal",
+      "body": "Geh zum gefundenen Ort und warte, bis das GPS-Signal dich freigibt.",
+      "locationName": "Mitten im Park",
+      "location": {
+        "latitude": 49.3928004,
+        "longitude": 8.8015519
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Zum Scan",
+      "successMessage": "Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "scan-steinmauer-mit-treppe"
+    },
+    {
+      "id": "scan-steinmauer-mit-treppe",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "steinmauer-mit-treppe",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-steinmauer-mit-treppe"
+    },
+    {
+      "id": "game-steinmauer-mit-treppe",
+      "type": "external_game",
+      "title": "FruitSlash",
+      "body": "Schliesse FruitSlash ab. Danach geht die Suche weiter.",
+      "gameId": "fruitslash-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte FruitSlash und schliesse das Spiel ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "FruitSlash geschafft.",
+      "primaryActionLabel": "FruitSlash starten",
+      "qrFallbackCode": "TEAM2",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-julius-menzer-gedenktafel"
+    },
+    {
+      "id": "riddle-julius-menzer-gedenktafel",
+      "type": "message",
+      "title": "Raetsel 3",
+      "body": "Nahe dem Spielplatz traegt eine rote Wand eine eingemeisselte Tafel. Sie erinnert an einen Namen aus alter Zeit. Suche die Schrift im Stein.",
+      "primaryActionLabel": "Ort suchen",
+      "nextStepId": "geo-julius-menzer-gedenktafel"
+    },
+    {
+      "id": "geo-julius-menzer-gedenktafel",
+      "type": "geofence",
+      "title": "Zum dritten Signal",
+      "body": "Geh zum gefundenen Ort und warte, bis das GPS-Signal dich freigibt.",
+      "locationName": "Am Spielplatz",
+      "location": {
+        "latitude": 49.3936026,
+        "longitude": 8.8015558
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Zum Scan",
+      "successMessage": "Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "scan-julius-menzer-gedenktafel"
+    },
+    {
+      "id": "scan-julius-menzer-gedenktafel",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "julius-menzer-gedenktafel",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-julius-menzer-gedenktafel"
+    },
+    {
+      "id": "game-julius-menzer-gedenktafel",
+      "type": "external_game",
+      "title": "SwipeGunner",
+      "body": "Schliesse alle 4 SwipeGunner-Level ab. Danach geht die Suche weiter.",
+      "gameId": "swipegunner-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte SwipeGunner und schliesse Level 4 ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "SwipeGunner geschafft.",
+      "primaryActionLabel": "SwipeGunner starten",
+      "qrFallbackCode": "TEAM3",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-stein-evian"
+    },
+    {
+      "id": "riddle-stein-evian",
+      "type": "message",
+      "title": "Raetsel 4",
+      "body": "Ein grauer Waechter steht am Eingang des Parks. Seine Haut ist voller heller Flecken, und oben links traegt er ein kleines Zeichen.",
+      "primaryActionLabel": "Ort suchen",
+      "nextStepId": "geo-stein-evian"
+    },
+    {
+      "id": "geo-stein-evian",
+      "type": "geofence",
+      "title": "Zum letzten Signal",
+      "body": "Geh zum gefundenen Ort und warte, bis das GPS-Signal dich freigibt.",
+      "locationName": "Eingang Park",
+      "location": {
+        "latitude": 49.3926829,
+        "longitude": 8.8022366
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Zum Scan",
+      "successMessage": "Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "scan-stein-evian"
+    },
+    {
+      "id": "scan-stein-evian",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "stein-evian",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-stein-evian"
+    },
+    {
+      "id": "game-stein-evian",
+      "type": "external_game",
+      "title": "FastFoodRush",
+      "body": "Schliesse FastFoodRush ab. Danach ist der Hunt abgeschlossen.",
+      "gameId": "fastfoodrush-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte FastFoodRush und schliesse das Finale ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "FastFoodRush geschafft.",
+      "primaryActionLabel": "FastFoodRush starten",
+      "qrFallbackCode": "TEAM4",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "complete"
+    },
+    {
+      "id": "complete",
+      "type": "message",
+      "title": "RiftHunt geschafft",
+      "body": "Alle vier Signale sind gesichert. Die Spiele sind frei, und der Hunt ist abgeschlossen.",
+      "primaryActionLabel": "Spiele frei waehlen",
+      "actionUrl": "StreamingAssets/StoryMint/rifthunt-games.html",
+      "nextStepId": "intro"
+    }
+  ]
+}

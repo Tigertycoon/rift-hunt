@@ -1,0 +1,127 @@
+{
+  "trailId": "storymint-rift-hunt-sample",
+  "title": "StoryMint Rift Hunt",
+  "sceneName": "SampleScene",
+  "startStepId": "intro",
+  "steps": [
+    {
+      "id": "intro",
+      "type": "message",
+      "title": "Rift Hunt",
+      "body": "Ein erster Riss wurde entdeckt. Loese den Hinweis, scanne das Blumenmotiv und schliesse danach das Portal-Schloss.",
+      "primaryActionLabel": "Starten",
+      "nextStepId": "riddle-rune-order"
+    },
+    {
+      "id": "riddle-rune-order",
+      "type": "riddle",
+      "title": "Der erste Hinweis",
+      "body": "Auf dem Fundzettel steht: Erst faellt Licht auf den Riss, dann traegt Luft den Ton, zuletzt bindet Erde die Energie. Welche Reihenfolge schliesst das Portal?",
+      "riddlePrompt": "Welche Runenfolge schliesst das Portal?",
+      "hintMessage": "Denkt vom Himmel bis zum Boden.",
+      "choices": [
+        {
+          "id": "wrong-ground-first",
+          "label": "TERRA - AER - LUX",
+          "isCorrect": false,
+          "feedback": "Das beginnt am Boden. Der Hinweis startet oben beim Licht."
+        },
+        {
+          "id": "correct-light-air-earth",
+          "label": "LUX - AER - TERRA",
+          "isCorrect": true,
+          "feedback": "Richtig. Merkt euch: LUX, AER, TERRA."
+        },
+        {
+          "id": "wrong-shadow",
+          "label": "UMBRA - TERRA - LUX",
+          "isCorrect": false,
+          "feedback": "UMBRA klingt stark, aber der Zettel nennt keinen Schatten."
+        }
+      ],
+      "successMessage": "Raetsel geloest.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "scan-flower"
+    },
+    {
+      "id": "scan-flower",
+      "type": "scan",
+      "title": "Scanne das Motiv",
+      "body": "Richte die Kamera auf das Blumenmotiv, bis die AR-Markierung erscheint.",
+      "targetId": "altes-tor",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "prep-tap"
+    },
+    {
+      "id": "prep-tap",
+      "type": "message",
+      "title": "Riss stabilisieren",
+      "body": "Sehr gut. Gleich erscheint ein pulsierender Riss ueber dem Ziel. Tippe ihn an, um die Sequenz abzuschliessen.",
+      "primaryActionLabel": "Weiter",
+      "nextStepId": "tap-hotspot"
+    },
+    {
+      "id": "tap-hotspot",
+      "type": "ar_interaction",
+      "title": "Tippe den Riss an",
+      "body": "Wenn das Motiv stabil erkannt wird, erscheint ein leuchtender Riss ueber dem Ziel. Tippe ihn an.",
+      "targetId": "altes-tor",
+      "interactionType": "tap",
+      "interactionPrefabResourcePath": "StoryMint/RiftPortalVFX",
+      "interactionScale": 0.64,
+      "interactionWaitingMessage": "Halte das Motiv im Bild, dann erscheint der Riss.",
+      "interactionVisibleMessage": "Riss sichtbar. Tippe ihn an.",
+      "interactionFallbackMessage": "Tracking kurz verloren. Der Riss bleibt an der letzten Position sichtbar.",
+      "successMessage": "Riss stabilisiert.",
+      "interactionLocalPosition": {
+        "x": 0.0,
+        "y": 0.08,
+        "z": 0.045
+      },
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "portal-lock"
+    },
+    {
+      "id": "portal-lock",
+      "type": "portal_deactivation",
+      "title": "Portal-Schloss",
+      "body": "Tippt die Runen in der Reihenfolge aus dem Raetsel. Eine falsche Rune loescht die Eingabe.",
+      "portalPrompt": "Tippt die Abschaltfolge: Licht, Luft, Erde.",
+      "targetId": "altes-tor",
+      "interactionType": "sequence",
+      "interactionPrefabResourcePath": "StoryMint/RiftPortalVFX",
+      "interactionScale": 0.64,
+      "interactionLocalPosition": {
+        "x": 0.0,
+        "y": 0.08,
+        "z": 0.045
+      },
+      "runeOptions": [
+        "LUX",
+        "AER",
+        "TERRA",
+        "UMBRA"
+      ],
+      "runeSequence": [
+        "LUX",
+        "AER",
+        "TERRA"
+      ],
+      "portalProgressLabel": "Runenfolge",
+      "portalMistakeMessage": "Falscher Ton. Der Riss springt zurueck.",
+      "portalSolvedMessage": "Die Runen verriegeln sich. Das Portal faellt in sich zusammen.",
+      "successMessage": "Portal deaktiviert.",
+      "autoAdvanceDelay": 1.15,
+      "nextStepId": "complete"
+    },
+    {
+      "id": "complete",
+      "type": "message",
+      "title": "Geschafft",
+      "body": "Der erste StoryMint-Rift-Hunt-Slice laeuft jetzt Ende-zu-Ende: Hinweis, Raetsel, Scan, AR-Reaktion, Portal-Schloss und Abschluss.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "intro"
+    }
+  ]
+}

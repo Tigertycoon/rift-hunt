@@ -1,0 +1,44 @@
+{
+  "trailId": "storymint-rift-hunt-stein-evian",
+  "title": "Rift Hunt - Stein Evian",
+  "sceneName": "SampleScene",
+  "startStepId": "stein-evian-gps",
+  "steps": [
+    {
+      "id": "stein-evian-gps",
+      "type": "geofence",
+      "title": "Story-Ort erreichen",
+      "body": "Geh zum Story-Ort und warte, bis GPS genau genug ist.",
+      "locationName": "Eingang Park",
+      "location": {
+        "latitude": 49.3926829,
+        "longitude": 8.8022366
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Fallback nutzen",
+      "successMessage": "Story-Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "stein-evian-scan"
+    },
+    {
+      "id": "stein-evian-scan",
+      "type": "scan",
+      "title": "Triggerbild scannen",
+      "body": "Richte die Kamera auf das Triggerbild.",
+      "targetId": "stein-evian",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "stein-evian-complete"
+    },
+    {
+      "id": "stein-evian-complete",
+      "type": "message",
+      "title": "Geschafft",
+      "body": "Der Stein wurde erkannt. Dieser Ort kann jetzt in die Hauptstrecke uebernommen werden.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "stein-evian-gps"
+    }
+  ]
+}

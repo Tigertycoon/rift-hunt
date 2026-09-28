@@ -1,0 +1,4 @@
+PASS - Unity 6000.0.79f1
+Preview booted; intro action and simulated image-found event advanced to the first minigame.
+All seven original minigame controllers initialized with their UI.
+Win/lose paths, device tracking, mobile input and visuals were not validated.

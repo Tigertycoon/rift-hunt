@@ -1,0 +1,44 @@
+{
+  "trailId": "storymint-rift-hunt-palettenbank",
+  "title": "Rift Hunt - Palettenbank",
+  "sceneName": "SampleScene",
+  "startStepId": "palettenbank-gps",
+  "steps": [
+    {
+      "id": "palettenbank-gps",
+      "type": "geofence",
+      "title": "Story-Ort erreichen",
+      "body": "Geh zum Story-Ort und warte, bis GPS genau genug ist.",
+      "locationName": "Hinter der Villa",
+      "location": {
+        "latitude": 49.3933281,
+        "longitude": 8.8024333
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Fallback nutzen",
+      "successMessage": "Story-Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "palettenbank-scan"
+    },
+    {
+      "id": "palettenbank-scan",
+      "type": "scan",
+      "title": "Triggerbild scannen",
+      "body": "Richte die Kamera auf das Triggerbild.",
+      "targetId": "palettenbank",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "palettenbank-complete"
+    },
+    {
+      "id": "palettenbank-complete",
+      "type": "message",
+      "title": "Geschafft",
+      "body": "Die Palettenbank wurde erkannt. Dieser Ort kann jetzt in die Hauptstrecke uebernommen werden.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "palettenbank-gps"
+    }
+  ]
+}

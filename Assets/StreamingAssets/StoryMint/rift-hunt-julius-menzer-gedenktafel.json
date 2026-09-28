@@ -1,0 +1,44 @@
+{
+  "trailId": "storymint-rift-hunt-julius-menzer-gedenktafel",
+  "title": "Rift Hunt - Julius-Menzer-Gedenktafel",
+  "sceneName": "SampleScene",
+  "startStepId": "julius-menzer-gedenktafel-gps",
+  "steps": [
+    {
+      "id": "julius-menzer-gedenktafel-gps",
+      "type": "geofence",
+      "title": "Story-Ort erreichen",
+      "body": "Geh zum Story-Ort und warte, bis GPS genau genug ist.",
+      "locationName": "Am Spielplatz",
+      "location": {
+        "latitude": 49.3936026,
+        "longitude": 8.8015558
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Fallback nutzen",
+      "successMessage": "Story-Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "julius-menzer-gedenktafel-scan"
+    },
+    {
+      "id": "julius-menzer-gedenktafel-scan",
+      "type": "scan",
+      "title": "Triggerbild scannen",
+      "body": "Richte die Kamera auf das Triggerbild.",
+      "targetId": "julius-menzer-gedenktafel",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "julius-menzer-gedenktafel-complete"
+    },
+    {
+      "id": "julius-menzer-gedenktafel-complete",
+      "type": "message",
+      "title": "Geschafft",
+      "body": "Die Julius-Menzer-Gedenktafel wurde erkannt. Dieser Ort kann jetzt in die Hauptstrecke uebernommen werden.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "julius-menzer-gedenktafel-gps"
+    }
+  ]
+}

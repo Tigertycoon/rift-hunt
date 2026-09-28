@@ -1,0 +1,44 @@
+{
+  "trailId": "storymint-rift-hunt-berliner-mauer",
+  "title": "Rift Hunt - Berliner Mauer",
+  "sceneName": "SampleScene",
+  "startStepId": "berliner-mauer-gps",
+  "steps": [
+    {
+      "id": "berliner-mauer-gps",
+      "type": "geofence",
+      "title": "Story-Ort erreichen",
+      "body": "Geh zum Story-Ort und warte, bis GPS genau genug ist.",
+      "locationName": "Vor Villa",
+      "location": {
+        "latitude": 49.3929526,
+        "longitude": 8.801874
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Fallback nutzen",
+      "successMessage": "Story-Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "berliner-mauer-scan"
+    },
+    {
+      "id": "berliner-mauer-scan",
+      "type": "scan",
+      "title": "Triggerbild scannen",
+      "body": "Richte die Kamera auf das Triggerbild.",
+      "targetId": "berliner-mauer",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "berliner-mauer-complete"
+    },
+    {
+      "id": "berliner-mauer-complete",
+      "type": "message",
+      "title": "Geschafft",
+      "body": "Das Berliner-Mauer-Stueck wurde erkannt. Dieser Ort kann jetzt in die Hauptstrecke uebernommen werden.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "berliner-mauer-gps"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "trailId": "storymint-rift-hunt-imagine-game-bridge-test",
+  "title": "Rift Hunt - Game Bridge Test",
+  "sceneName": "Imagine-Scene",
+  "startStepId": "riddle-berliner-mauer",
+  "steps": [
+    {
+      "id": "riddle-berliner-mauer",
+      "type": "message",
+      "title": "Raetsel 1",
+      "body": "Ein buntes Stueck einer geteilten Stadt steht heute hier im Park. Suche die Farben, die wie eine Karte aussehen, und finde dort das erste Signal.",
+      "primaryActionLabel": "Gefunden",
+      "nextStepId": "scan-berliner-mauer"
+    },
+    {
+      "id": "scan-berliner-mauer",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "berliner-mauer",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-berliner-mauer"
+    },
+    {
+      "id": "game-berliner-mauer",
+      "type": "external_game",
+      "title": "GateRunner",
+      "body": "Schliesse alle 5 GateRunner-Level ab. Danach geht die Suche weiter.",
+      "gameId": "gaterunner-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte GateRunner und schliesse Level 5 ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "GateRunner geschafft.",
+      "primaryActionLabel": "GateRunner starten",
+      "qrFallbackCode": "TEAM1",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-altes-tor"
+    },
+    {
+      "id": "riddle-altes-tor",
+      "type": "message",
+      "title": "Raetsel 2",
+      "body": "Hinter Stein und Schatten wartet ein altes Holz, auf dem ein blaues Zeichen sitzt. Finde das Tor, das nicht wie ein Haupteingang wirkt.",
+      "primaryActionLabel": "Gefunden",
+      "nextStepId": "scan-altes-tor"
+    },
+    {
+      "id": "scan-altes-tor",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "altes-tor",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-altes-tor"
+    },
+    {
+      "id": "game-altes-tor",
+      "type": "external_game",
+      "title": "FruitSlash",
+      "body": "Schliesse FruitSlash ab. Danach geht die Suche weiter.",
+      "gameId": "fruitslash-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte FruitSlash und schliesse das Spiel ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "FruitSlash geschafft.",
+      "primaryActionLabel": "FruitSlash starten",
+      "qrFallbackCode": "TEAM2",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-schoene-holz-tuer"
+    },
+    {
+      "id": "riddle-schoene-holz-tuer",
+      "type": "message",
+      "title": "Raetsel 3",
+      "body": "Am Rand des Spiels liegt Holz in Mustern wie ein Quadrat im Quadrat. Suche die Tuer, deren Linien nach innen zeigen.",
+      "primaryActionLabel": "Gefunden",
+      "nextStepId": "scan-schoene-holz-tuer"
+    },
+    {
+      "id": "scan-schoene-holz-tuer",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "schoene-holz-tuer",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-schoene-holz-tuer"
+    },
+    {
+      "id": "game-schoene-holz-tuer",
+      "type": "external_game",
+      "title": "SwipeGunner",
+      "body": "Schliesse alle 4 SwipeGunner-Level ab. Danach ist der Test abgeschlossen.",
+      "gameId": "swipegunner-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte SwipeGunner und schliesse Level 4 ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "SwipeGunner geschafft.",
+      "primaryActionLabel": "SwipeGunner starten",
+      "qrFallbackCode": "TEAM3",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-stein-evian"
+    },
+    {
+      "id": "riddle-stein-evian",
+      "type": "message",
+      "title": "Raetsel 4",
+      "body": "Ein grauer Waechter steht am Eingang des Parks. Seine Haut ist voller heller Flecken, und oben links traegt er ein kleines Zeichen. Finde ihn und pruefe das letzte Signal.",
+      "primaryActionLabel": "Gefunden",
+      "nextStepId": "scan-stein-evian"
+    },
+    {
+      "id": "scan-stein-evian",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "stein-evian",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "game-stein-evian"
+    },
+    {
+      "id": "game-stein-evian",
+      "type": "external_game",
+      "title": "FastFoodRush",
+      "body": "Schliesse FastFoodRush ab. Danach ist der Hunt abgeschlossen.",
+      "gameId": "fastfoodrush-1",
+      "gameUrl": "StreamingAssets/StoryMint/bridge-test-game.html",
+      "gameWaitingMessage": "Starte FastFoodRush und schliesse das Finale ab. Danach kommst du automatisch hierher zurueck.",
+      "gameCompletedMessage": "FastFoodRush geschafft.",
+      "primaryActionLabel": "FastFoodRush starten",
+      "qrFallbackCode": "TEAM4",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "complete"
+    },
+    {
+      "id": "complete",
+      "type": "message",
+      "title": "Bridge-Test abgeschlossen",
+      "body": "Alle vier Targets und alle vier externen Spiel-Rueckspruenge funktionieren.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "riddle-berliner-mauer"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+PASS - Unity 6000.0.79f1
+Trail parsing and references: 16 trails, 93 steps.
+Geofence: accurate/poor/missing fix and known-distance checks passed.
+Progress: round-trip, clear and trail-scoped completion passed.
+No physical tracking, mobile browser or licensed SDK acceptance is implied.

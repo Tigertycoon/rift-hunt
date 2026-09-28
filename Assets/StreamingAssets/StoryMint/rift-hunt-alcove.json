@@ -1,0 +1,44 @@
+{
+  "trailId": "storymint-rift-hunt-alcove",
+  "title": "Rift Hunt - Alcove",
+  "sceneName": "SampleScene",
+  "startStepId": "alcove-gps",
+  "steps": [
+    {
+      "id": "alcove-gps",
+      "type": "geofence",
+      "title": "Story-Ort erreichen",
+      "body": "Geh zum Story-Ort und warte, bis GPS genau genug ist.",
+      "locationName": "Auf dem Weg",
+      "location": {
+        "latitude": 49.3931089,
+        "longitude": 8.801646
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Fallback nutzen",
+      "successMessage": "Story-Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "alcove-scan"
+    },
+    {
+      "id": "alcove-scan",
+      "type": "scan",
+      "title": "Triggerbild scannen",
+      "body": "Richte die Kamera auf das Triggerbild.",
+      "targetId": "alcove",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "alcove-complete"
+    },
+    {
+      "id": "alcove-complete",
+      "type": "message",
+      "title": "Geschafft",
+      "body": "Die Stein-Nische wurde erkannt. Dieser Ort kann jetzt in die Hauptstrecke uebernommen werden.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "alcove-gps"
+    }
+  ]
+}

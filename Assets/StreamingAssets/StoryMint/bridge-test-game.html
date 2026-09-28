@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>StoryMint Bridge Test Game</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07110f;
+      color: #f5fbf7;
+    }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      box-sizing: border-box;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(60, 192, 145, 0.28), transparent 32%),
+        linear-gradient(160deg, #07110f, #10221d 48%, #0a1519);
+    }
+    main {
+      width: min(560px, 100%);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 8vw, 54px);
+      line-height: 1;
+    }
+    p {
+      margin: 0 0 24px;
+      color: #cfe3dc;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      padding: 18px 20px;
+      background: #78f0b7;
+      color: #07110f;
+      font-weight: 800;
+      font-size: 20px;
+    }
+    small {
+      display: block;
+      margin-top: 18px;
+      color: #91aba2;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Testspiel</h1>
+    <p>Diese kleine Seite simuliert spaeter ein echtes Minigame. Der Button setzt den Abschluss im lokalen Speicher und springt zurueck zu RiftHunt.</p>
+    <button id="finishButton" type="button">Spiel abschliessen</button>
+    <small id="debug"></small>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const gameId = params.get("gameId") || "bridge-test-game";
+    const trailId = params.get("trailId") || "";
+    const returnUrl = params.get("returnUrl") || "";
+    const debug = document.getElementById("debug");
+
+    debug.textContent = "gameId: " + gameId + (trailId ? " | trailId: " + trailId : "");
+
+    document.getElementById("finishButton").addEventListener("click", () => {
+      try {
+        localStorage.setItem("sm_game_" + gameId + "_complete", "1");
+        if (trailId) {
+          localStorage.setItem("sm_trail_" + trailId + "_game_" + gameId + "_complete", "1");
+          localStorage.setItem("sm_trail_" + trailId + "_game_" + gameId + "_ts", Date.now().toString());
+        }
+      } catch (error) {
+        console.warn("[StoryMint] Could not write game completion.", error);
+      }
+
+      if (returnUrl) {
+        window.location.href = returnUrl;
+      } else if (history.length > 1) {
+        history.back();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "trailId": "storymint-rift-hunt-bronze-mann-mit-buch",
+  "title": "Rift Hunt - Bronze Mann mit Buch",
+  "sceneName": "SampleScene",
+  "startStepId": "bronze-mann-mit-buch-gps",
+  "steps": [
+    {
+      "id": "bronze-mann-mit-buch-gps",
+      "type": "geofence",
+      "title": "Story-Ort erreichen",
+      "body": "Geh zum Story-Ort und warte, bis GPS genau genug ist.",
+      "locationName": "Vor der Villa",
+      "location": {
+        "latitude": 49.392912,
+        "longitude": 8.8020629
+      },
+      "geofenceRadiusMeters": 20,
+      "requiredAccuracyMeters": 80,
+      "allowLocationFallback": true,
+      "primaryActionLabel": "Fallback nutzen",
+      "successMessage": "Story-Ort erreicht.",
+      "autoAdvanceDelay": 0.85,
+      "nextStepId": "bronze-mann-mit-buch-scan"
+    },
+    {
+      "id": "bronze-mann-mit-buch-scan",
+      "type": "scan",
+      "title": "Triggerbild scannen",
+      "body": "Richte die Kamera auf das Triggerbild.",
+      "targetId": "bronze-mann-mit-buch",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "bronze-mann-mit-buch-complete"
+    },
+    {
+      "id": "bronze-mann-mit-buch-complete",
+      "type": "message",
+      "title": "Geschafft",
+      "body": "Die Bronze-Figur wurde erkannt. Dieser Ort kann jetzt in die Hauptstrecke uebernommen werden.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "bronze-mann-mit-buch-gps"
+    }
+  ]
+}

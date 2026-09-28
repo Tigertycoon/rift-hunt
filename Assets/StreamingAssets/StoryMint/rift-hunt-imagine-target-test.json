@@ -1,0 +1,70 @@
+{
+  "trailId": "storymint-rift-hunt-imagine-target-test",
+  "title": "Rift Hunt - Imagine Target Test",
+  "sceneName": "Imagine-Scene",
+  "startStepId": "riddle-berliner-mauer",
+  "steps": [
+    {
+      "id": "riddle-berliner-mauer",
+      "type": "message",
+      "title": "Raetsel 1",
+      "body": "Ein buntes Stueck einer geteilten Stadt steht heute hier im Park. Suche die Farben, die wie eine Karte aussehen, und finde dort das erste Signal.",
+      "primaryActionLabel": "Gefunden",
+      "nextStepId": "scan-berliner-mauer"
+    },
+    {
+      "id": "scan-berliner-mauer",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "berliner-mauer",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-altes-tor"
+    },
+    {
+      "id": "riddle-altes-tor",
+      "type": "message",
+      "title": "Raetsel 2",
+      "body": "Hinter Stein und Schatten wartet ein altes Holz, auf dem ein blaues Zeichen sitzt. Finde das Tor, das nicht wie ein Haupteingang wirkt.",
+      "primaryActionLabel": "Gefunden",
+      "nextStepId": "scan-altes-tor"
+    },
+    {
+      "id": "scan-altes-tor",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "altes-tor",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "riddle-schoene-holz-tuer"
+    },
+    {
+      "id": "riddle-schoene-holz-tuer",
+      "type": "message",
+      "title": "Raetsel 3",
+      "body": "Am Rand des Spiels liegt Holz in Mustern wie ein Quadrat im Quadrat. Suche die Tuer, deren Linien nach innen zeigen.",
+      "primaryActionLabel": "Gefunden",
+      "nextStepId": "scan-schoene-holz-tuer"
+    },
+    {
+      "id": "scan-schoene-holz-tuer",
+      "type": "scan",
+      "title": "Signal pruefen",
+      "body": "Richte die Kamera auf den gefundenen Ort.",
+      "targetId": "schoene-holz-tuer",
+      "successMessage": "Signal gefunden.",
+      "autoAdvanceDelay": 1.0,
+      "nextStepId": "complete"
+    },
+    {
+      "id": "complete",
+      "type": "message",
+      "title": "Test abgeschlossen",
+      "body": "Alle drei Imagine-Targets wurden in dieser Teststrecke gefunden.",
+      "primaryActionLabel": "Neu starten",
+      "nextStepId": "riddle-berliner-mauer"
+    }
+  ]
+}
